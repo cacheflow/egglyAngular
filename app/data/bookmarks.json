@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Wooo hip hop",
+        "url": "www.hiphopdx.com",
+        "category": "rap"
+    },
+    {
+        "id": 2,
+        "title": "Moar hip hop",
+        "url": "www.defsounds.com",
+        "category": "blues"
+    },
+    {
+        "id": 3,
+        "title": "Songs about my trucks",
+        "url": "http://www.cmt.com/",
+        "category": "country"
+    },
+    {
+        "id": 3,
+        "title": "Country as a southern belle",
+        "url": "http://www.cmt.com/",
+        "category": "country"
+    },
+    {
+        "id": 4,
+        "title": "Jazz Hands",
+        "url": "http://www.jazzradio.com/",
+        "category": "jazz"
+    }
+]

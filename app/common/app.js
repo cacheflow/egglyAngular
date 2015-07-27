@@ -1,17 +1,19 @@
-var app  = angular.module("Eggly", []);
+var app  = angular.module('Eggly', [
+    "ui.router",
+    "categories",
+    "angular-toArrayFilter",
+    "categories.bookmarks"
+])
 
-app.controller("MainCtrl", function($scope){
-  $scope.bookmarks = [
-    {"id": 1, "title": "HipHopDx", "url": "www.hiphopdx.com", "category": "rap" },
-    {"id": 2, "title": "AllHipHop", "url": "www.defsounds.com", "category": "blues"},
-    {"id": 3, "title": "Country", "url": "http://www.cmt.com/", "category": "country"}
-  ];
-
-  $scope.categories = [
-    {"id": 1, "title": "First", "name": "rap"},
-    {"id": 2, "title": "Second", "name": "blues"},
-    {"id": 3, "title": "Third", "name": "country"}
-  ];
+  .config(function($stateProvider, $urlRouterProvider){
+    $stateProvider.state("eggly", {
+      url: "",
+      abstract: true
+    });
+    $urlRouterProvider.otherwise("/");
+  })
+  .controller("MainCtrl", function($scope, $state){
+  
 
   $scope.isCreating = false;
   $scope.isEditing = false;
@@ -45,7 +47,7 @@ app.controller("MainCtrl", function($scope){
 
   function setCurrentCategory(category) {
     $scope.currentCategory = category;
-
+    $state.go('eggly.categories.bookmarks', {category:category.name});
     cancelCreating();
     cancelEditing();
   }
